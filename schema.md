@@ -17,13 +17,17 @@
 - university_db
 
 
-## Table:s:
+## Tables:
 - departments
 - degree_courses
 - courses
 - teachers
 - exams
 - students
+
+## Pivot Tables:
+- course_teacher
+- student_exam
 
 
 
