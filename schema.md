@@ -17,7 +17,7 @@
 - university_db
 
 
-## Tables:
+## Table:s:
 - departments
 - degree_courses
 - courses
@@ -27,20 +27,20 @@
 
 
 
-## Table departments
+## Table: departments
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - name                     VARCHAR(100), NOT NULL
 - email                    VARCHAR(255), NULL
 - phone                    VARCHAR(20), NULL
 - web_site                 VARCHAR(255), NULL
 
-## Table degree_courses
+## Table: degree_courses
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - department_id            INT,FK,NOT NULL
 - name                     VARCHAR(150), NOT NULL
 - level                    VARCHAR(20), NOT NULL
 
-## Table courses
+## Table: courses
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - degree_courses_id        INT,FK,NOT NULL
 - name                     VARCHAR(150),NOT NULL
@@ -49,7 +49,7 @@
 - year                     TINYINT,NOT NULL
 - cfu                      TINYINT,NOT NULL
 
-## Table teachers
+## Table: teachers
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - first_name               VARCHAR(50),NOT NULL
 - last_name                VARCHAR(50),NOT NULL
@@ -57,7 +57,7 @@
 - phone                    VACHAR(20),NOT NULL
 - email                    VARCHAR(255), NOT NULL
 
-## Table students 
+## Table: students 
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - degree_courses_id        INT,FK,NOT NULL
 - first_name               VARCHAR(50),NOT NULL
@@ -68,18 +68,18 @@
 - email                    VARCHAR(255), NOT NULL
 - registration_date        DATA,NOT NULL
 
-## Table Exams
+## Table: Exams
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
 - course_id                INT,FK,NOT NULL
 - data                     DATA, NOT NULL
 - hour                     TIME, NOT NULL
 - room                     VARCHAR(50),NULL
 
-# Table course_teacher
+# Pivot Table: course_teacher
 - course_id                INT,FK,NOT NULL
 - teacher_id               INT,FK NOT NULL
 
-# Table student_exam
+# Pivot Table: student_exam
 - student_id               INT,FK,NOT NULL
 - exam_id                  INT,FK,NOT NULL
 - vote                     TINYINT,NOT NULL
