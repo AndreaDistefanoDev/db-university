@@ -36,13 +36,13 @@
 
 ## Table degree_courses
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
-- id_degree_course         INT,FK,NOT NULL
+- department_id            INT,FK,NOT NULL
 - name                     VARCHAR(150), NOT NULL
 - level                    VARCHAR(20), NOT NULL
 
 ## Table courses
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
-- id_course                INT,FK,NOT NULL
+- degree_courses_id        INT,FK,NOT NULL
 - name                     VARCHAR(150),NOT NULL
 - description              TEXT, NULL
 - period                   VARCHAR(20),NOT NULL
@@ -59,6 +59,7 @@
 
 ## Table students 
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- degree_courses_id        INT,FK,NOT NULL
 - first_name               VARCHAR(50),NOT NULL
 - last_name                VARCHAR(50),NOT NULL
 - date_of_birth            DATE,NOT NULL
@@ -69,10 +70,20 @@
 
 ## Table Exams
 - id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
-- name                     VARCHAR(150), NOT NULL
+- course_id                INT,FK,NOT NULL
 - data                     DATA, NOT NULL
 - hour                     TIME, NOT NULL
 - room                     VARCHAR(50),NULL
+
+# Table course_teacher
+- course_id                INT,FK,NOT NULL
+- teacher_id               INT,FK NOT NULL
+
+# Table student_exam
+- student_id               INT,FK,NOT NULL
+- exam_id                  INT,FK,NOT NULL
+- vote                     TINYINT,NOT NULL
+- date_exam                DATE,NOT NULL
 
 
 
