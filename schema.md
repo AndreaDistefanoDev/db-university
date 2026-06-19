@@ -24,13 +24,40 @@
 - teachers
 - exam_appeals
 - students
-- votes
+
 
 
 ## Table departments
-- id            INT,PRIMARY KEY,UNIQUE,AUTO INCREMENT,NOT NULL
-- name          VARCHAR(100), NOT NULL
-- email         VARCHAR(255), NULL
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- name                     VARCHAR(100), NOT NULL
+- email                    VARCHAR(255), NULL
+- phone                    VARCHAR(20), NULL
+- web_site                 VARCHAR(255), NULL
+
+## Table degree_courses
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- id_degree_course         INT,FK,NOT NULL
+- name                     VARCHAR(150), NOT NULL
+- level                    VARCHAR(20), NOT NULL
+
+## Table courses
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- id_course                INT,FK,NOT NULL
+- name                     VARCHAR(150),NOT NULL
+- description              TEXT, NULL
+- period                   VARCHAR(20),NOT NULL
+- year                     TINYINT,NOT NULL
+- cfu                      TINYINT,NOT NULL
+
+## Table teachers
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- first_name               VARCHAR(50),NOT NULL
+- last_name                VARCHAR(50),NOT NULL
+- date_of_birth            DATE,NOTNULL
+- phone                    VACHAR(20),NOT NULL
+- email                    VARCHAR(255), NOT NULL
+
+
 
 
 
