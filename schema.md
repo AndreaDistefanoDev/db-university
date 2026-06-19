@@ -22,7 +22,7 @@
 - degree_courses
 - courses
 - teachers
-- exam_appeals
+- exams
 - students
 
 
@@ -57,7 +57,22 @@
 - phone                    VACHAR(20),NOT NULL
 - email                    VARCHAR(255), NOT NULL
 
+## Table students 
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- first_name               VARCHAR(50),NOT NULL
+- last_name                VARCHAR(50),NOT NULL
+- date_of_birth            DATE,NOT NULL
+- registration_number      VARCHAR(20),NOT NULL
+- phone                    VACHAR(20),NOT NULL
+- email                    VARCHAR(255), NOT NULL
+- registration_date        DATA,NOT NULL
 
+## Table Exams
+- id                       INT,PK,UNIQUE,AUTO INCREMENT,NOT NULL
+- name                     VARCHAR(150), NOT NULL
+- data                     DATA, NOT NULL
+- hour                     TIME, NOT NULL
+- room                     VARCHAR(50),NULL
 
 
 
